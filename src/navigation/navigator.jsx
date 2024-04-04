@@ -1,6 +1,7 @@
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import openCamera from "../screens/openCamera";
+import albumScreen from "../screens/albumScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -28,14 +29,14 @@ function TabNavigator() {
                     tabBarIcon: "camera",
                 }}
             />
-            {/* <Tab.Screen
+             <Tab.Screen
                 name="album"
                 component={albumScreen}
                 options={{
                     title: "Album de memorias",
                     tabBarIcon: "book",
                 }}
-            /> */}
+            /> 
         </Tab.Navigator>
     );
 }

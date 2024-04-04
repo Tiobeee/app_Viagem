@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+export default function home({}) {
   const nav = useNavigation();
 
   return (
@@ -10,7 +10,7 @@ export default function App() {
             Entra ai
         </Text>
       <View style={styles.footerContainer}>
-        <Button onPress={() => nav.navigate("openCamera")} style={styles.button} label="aa"/>
+        <Button onPress={() => nav.navigate("OpenCamera")} style={styles.button} label="aa"/>
       </View>
     </View>
   );
@@ -30,11 +30,10 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'white',
+    color:'black',
   },
 });
 
-{/*  */}
 
 
 // import React, { useState, useEffect } from 'react';
