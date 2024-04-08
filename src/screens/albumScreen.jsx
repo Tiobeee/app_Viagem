@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native';
 
-export default function albumScreen({}) {
+export default function AlbumScreen({}) {
 
   return (
     <View >
