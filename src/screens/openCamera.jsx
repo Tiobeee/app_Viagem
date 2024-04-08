@@ -54,10 +54,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'flex-end',
     alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 14
   },
   text: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'white',
+    color: 'black',
   },
 });
