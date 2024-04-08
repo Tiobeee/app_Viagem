@@ -1,7 +1,7 @@
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import openCamera from "../screens/openCamera";
-import albumScreen from "../screens/albumScreen";
+import AlbumScreen from "../screens/albumScreen";
+import OpenCamera from "../screens/openCamera";
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -23,7 +23,7 @@ function TabNavigator() {
         <Tab.Navigator>
             <Tab.Screen
                 name="Camera"
-                component={openCamera}
+                component={OpenCamera}
                 options={{
                     title: "Camera",
                     tabBarIcon: "camera",
@@ -31,7 +31,7 @@ function TabNavigator() {
             />
              <Tab.Screen
                 name="album"
-                component={albumScreen}
+                component={AlbumScreen}
                 options={{
                     title: "Album de memorias",
                     tabBarIcon: "book",
