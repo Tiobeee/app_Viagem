@@ -26,12 +26,13 @@ export default function OpenCamera() {
   }
 
   const __takePicture = async () => {
-    if (!camera) return
-    const photo = await camera.takePictureAsync()
-    console.log(photo)
-    setPreviewVisible(true)
-    setCapturedImage(photo)
-  }
+    if (!cameraRef.current) return;
+    const photo = await cameraRef.current.takePictureAsync();
+    console.log(photo);
+    setPreviewVisible(true);
+    setCapturedImage(photo);
+  };
+  
 
   return (
     <View style={styles.container}>
