@@ -1,12 +1,15 @@
 import { Camera, CameraType } from 'expo-camera';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { CameraRoll } from 'react-native';
+
 
 export default function OpenCamera() {
   const [type, setType] = useState(CameraType.back);
   const [permission, requestPermission] = Camera.useCameraPermissions();
   const [previewVisible, setPreviewVisible] = useState(false);
   const [capturedImage, setCapturedImage] = useState (null);
+  const cameraRef = useRef(null);
 
   if (!permission) {
     return <View />;
@@ -26,11 +29,11 @@ export default function OpenCamera() {
   }
 
   const __takePicture = async () => {
-    if (!cameraRef.current) return;
-    const photo = await cameraRef.current.takePictureAsync();
-    console.log(photo);
-    setPreviewVisible(true);
-    setCapturedImage(photo);
+    if (cameraRef.current) {
+      const options = { quality: 1, base64: true, exif: false };
+      const photo = await cameraRef.current.takePictureAsync(options);
+      setPhoto(photo);
+    }
   };
   
 
@@ -49,6 +52,7 @@ export default function OpenCamera() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
