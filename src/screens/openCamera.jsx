@@ -6,7 +6,7 @@ export default function OpenCamera() {
   const [type, setType] = useState(CameraType.back);
   const [permission, requestPermission] = Camera.useCameraPermissions();
   const [previewVisible, setPreviewVisible] = useState(false);
-  const [capturedImage, setCapturedImage] = useState < any > (null);
+  const [capturedImage, setCapturedImage] = useState (null);
 
   if (!permission) {
     return <View />;
@@ -38,7 +38,7 @@ export default function OpenCamera() {
       <Camera style={styles.camera} type={type}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={toggleCameraType}>
-            <Text style={styles.text}>Flip Camera</Text>
+            <Text style={styles.text}>Virar Camera</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.takeButton} onPress={__takePicture}>
             <Text style={styles.text}>Tirar Foto</Text>
@@ -68,10 +68,19 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     alignItems: 'center',
     backgroundColor: 'white',
-    borderRadius: 14
+    borderRadius: 14,
+    marginRight: 100,
+  },
+  takeButton: {
+    flex: 1,
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 10,
+
   },
   text: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     color: 'black',
   },
